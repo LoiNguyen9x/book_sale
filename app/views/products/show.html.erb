@@ -1,0 +1,17 @@
+<div id="products-show">
+     <div class="products-show-left">
+        <% if @product.image.attached? %>
+        <%= image_tag(@product.image) %>
+        <%end%>
+    </div>
+    <h2><%=@product.title%></h2>
+    <div class="products-show-right">
+        <ul>
+            <li><strong>Title: </strong><%= @product.title %></li>
+            <li><strong>Category: </strong><%= @product.category_id %></li>
+            <li><strong>Description: </strong><%= @product.description %></li>
+            <li><strong>Price: </strong><%= @product.price %></li>
+        </ul>
+      <%= link_to 'Edit', admin_product_path(@product) %> |
+      <%= link_to 'Back', products_path %>
+</div>
